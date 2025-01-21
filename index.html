@@ -12,7 +12,7 @@
         <h1>Gerador de Regras e Filtro de Arquivos</h1>
 
         <div class="tools-container">
-            <!-- Filtro de Arquivos DNS -->
+            <!-- Filtro de Arquivos -->
             <section class="tool">
                 <h2>Filtro de Arquivos</h2>
                 <form id="uploadForm">
@@ -29,9 +29,14 @@
                 <h2>Gerador de Regras DNS</h2>
                 <form id="generateFormDNS">
                     <label for="sitesFile">Upload do arquivo de sites:</label>
-                    <input type="file" id="sitesFile" name="sitesFile" accept=".txt" required><br>
-                    <button type="button" id="generateButtonDNS">Gerar Regras DNS</button>
+                    <input type="file" id="sitesFile" name="sitesFile" accept=".txt"><br>
+                    <label for="dnsInput">Ou insira os endereços:</label>
+                    <textarea id="dnsInput" rows="5" placeholder="Ex.: www.exemplo.com\nwww.exemplo2.com"></textarea><br>
+                    <button type="button" id="generateButtonDNS">Gerar Regras DNS</button><br>
+                    <label for="dnsFileName">Nome do arquivo:</label>
+                    <input type="text" id="dnsFileName" placeholder="oficio_dns.txt">
                 </form>
+                <div id="dnsResult" class="result"></div>
             </section>
 
             <!-- Gerador de Regras IP -->
@@ -39,11 +44,16 @@
                 <h2>Gerador de Regras de Bloqueio de IP</h2>
                 <form id="generateFormIP">
                     <label for="ipsFile">Upload do arquivo de IPs:</label>
-                    <input type="file" id="ipsFile" name="ipsFile" accept=".txt" required><br>
+                    <input type="file" id="ipsFile" name="ipsFile" accept=".txt"><br>
+                    <label for="ipInput">Ou insira os IPs:</label>
+                    <textarea id="ipInput" rows="5" placeholder="Ex.: 192.168.0.1\n10.0.0.1"></textarea><br>
                     <label for="description">Descrição da Regra:</label>
                     <input type="text" id="description" name="description" placeholder="BLOQUEIO-ANATEL-LIBERAR-DIA-TAL" required><br>
-                    <button type="button" id="generateButtonIP">Gerar Regras IP</button>
+                    <button type="button" id="generateButtonIP">Gerar Regras IP</button><br>
+                    <label for="ipFileName">Nome do arquivo:</label>
+                    <input type="text" id="ipFileName" placeholder="regras_ip.txt">
                 </form>
+                <div id="ipResult" class="result"></div>
             </section>
         </div>
     </div>

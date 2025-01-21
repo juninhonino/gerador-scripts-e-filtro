@@ -29,6 +29,21 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Sem alterações na estrutura geral */
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-family: monospace;
+    white-space: pre-wrap;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+
 .tools-container {
     display: flex;
     justify-content: space-around;
