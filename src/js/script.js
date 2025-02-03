@@ -26,11 +26,18 @@ document.getElementById('filterButton').addEventListener('click', async () => {
         const baseText = await baseFile.text();
         const novoText = await novoFile.text();
 
-        const baseLines = new Set(baseText.split(/\r?\n/).map(line => line.trim()));
+        // Criando um Set para armazenar os endereços em letras minúsculas
+        const baseLines = new Set(baseText.split(/\r?\n/).map(line => line.trim().toLowerCase()));
         const novoLines = novoText.split(/\r?\n/);
 
-        const filteredLines = novoLines.filter(line => line.trim() && !baseLines.has(line.trim()));
-        const uniqueFilteredLines = [...new Set(filteredLines)];
+        // Filtrando as linhas considerando case insensitive
+        const filteredLines = novoLines.filter(line => {
+            const trimmedLine = line.trim();
+            return trimmedLine && !baseLines.has(trimmedLine.toLowerCase());
+        });
+
+        // Removendo duplicatas (case insensitive)
+        const uniqueFilteredLines = [...new Set(filteredLines.map(line => line.toLowerCase()))];
 
         const outputBlob = new Blob([uniqueFilteredLines.join('\n')], { type: 'text/plain' });
         const outputUrl = URL.createObjectURL(outputBlob);
@@ -105,7 +112,7 @@ document.getElementById('generateButtonIP').addEventListener('click', async () =
         return;
     }
 
-    const formatted = lines.map(ip => 
+    const formatted = lines.map(ip =>
         `ip route-static ${ip} 255.255.255.255 NULL0 preference 1 description ${description}`
     );
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Gerador de Regras e Filtro de Arquivos</h1>
@@ -31,7 +33,7 @@
                     <label for="sitesFile">Upload do arquivo de sites:</label>
                     <input type="file" id="sitesFile" name="sitesFile" accept=".txt"><br>
                     <label for="dnsInput">Ou insira os endereços:</label>
-                    <textarea id="dnsInput" rows="5" placeholder="Ex.: www.exemplo.com\nwww.exemplo2.com"></textarea><br>
+                    <textarea id="dnsInput" rows="5" placeholder="Ex.: www.exemplo.com www.exemplo2.com"></textarea><br>
                     <button type="button" id="generateButtonDNS">Gerar Regras DNS</button><br>
                     <label for="dnsFileName">Nome do arquivo:</label>
                     <input type="text" id="dnsFileName" placeholder="oficio_dns.txt">
@@ -48,7 +50,8 @@
                     <label for="ipInput">Ou insira os IPs:</label>
                     <textarea id="ipInput" rows="5" placeholder="Ex.: 192.168.0.1\n10.0.0.1"></textarea><br>
                     <label for="description">Descrição da Regra:</label>
-                    <input type="text" id="description" name="description" placeholder="BLOQUEIO-ANATEL-LIBERAR-DIA-TAL" required><br>
+                    <input type="text" id="description" name="description" placeholder="BLOQUEIO-ANATEL-LIBERAR-DIA-TAL"
+                        required><br>
                     <button type="button" id="generateButtonIP">Gerar Regras IP</button><br>
                     <label for="ipFileName">Nome do arquivo:</label>
                     <input type="text" id="ipFileName" placeholder="regras_ip.txt">
@@ -59,4 +62,5 @@
     </div>
     <script src="./src/js/script.js"></script>
 </body>
+
 </html>
