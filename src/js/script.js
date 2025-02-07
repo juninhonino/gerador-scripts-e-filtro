@@ -65,9 +65,9 @@ document.getElementById('generateButtonDNS').addEventListener('click', async () 
     if (fileInput.files.length) {
         const file = fileInput.files[0];
         const text = await file.text();
-        lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+        lines = text.split(/\r?\n/).map(line => line.trim().toLowerCase()).filter(Boolean);
     } else if (textInput) {
-        lines = textInput.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+        lines = textInput.split(/\r?\n/).map(line => line.trim().toLowerCase()).filter(Boolean);
     }
 
     if (!lines.length) {
